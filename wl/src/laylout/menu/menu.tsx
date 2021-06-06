@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom'
 import * as MenuIcons from './icons';
 import menuList from './menuTest';
 import IMenuProps from './menu-d';
@@ -17,8 +18,8 @@ const RenderMenu = (menuList: IMenuProps[]) =>
         {RenderMenu(item.children)}
       </SubMenu>
     ) : (
-      <Item key={path} icon={icon1}>
-        { title}
+      <Item key={path} title={title} icon={icon1}>
+        <Link to={path}>{title}</Link>
       </Item >
     )
   });

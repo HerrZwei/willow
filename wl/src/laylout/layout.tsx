@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
+import { BrowserRouter } from 'react-router-dom'
 
 import './layout.css';
 import MyContent from './content';
@@ -10,10 +11,11 @@ class SiderDemo extends React.Component {
     return (
       <>
         <Layout style={{ minHeight: '100vh' }}>
-          <MySider />
-          <MyContent />
+          <BrowserRouter>
+            <MySider />
+            <MyContent />
+          </BrowserRouter>
         </Layout>
-
       </>
     );
   }

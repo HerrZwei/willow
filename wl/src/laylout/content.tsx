@@ -1,6 +1,9 @@
-import React from 'react'
-import { Layout, Breadcrumb } from 'antd';
+import { Suspense } from 'react'
+import { Switch } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import { Layout, Breadcrumb, Spin } from 'antd';
 import MyFooter from './footer';
+import routes from 'src/router/config';
 
 const { Header, Content } = Layout;
 
@@ -13,15 +16,22 @@ const MyContent = () => {
           <Breadcrumb.Item>User</Breadcrumb.Item>
           <Breadcrumb.Item>Bill</Breadcrumb.Item>
         </Breadcrumb>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-          Bill is a cat.
-        </div>
+        <Switch>
+          <Suspense
+            fallback={
+              <div style={{ textAlign: 'center' }}>
+                <Spin tip="加载中..." />
+              </div>
+            }
+          >
+            {renderRoutes(routes)}
+          </Suspense>
+        </Switch>
       </Content>
       <div />
       <MyFooter />
     </Layout>
   </>)
 };
-
 
 export default MyContent;
