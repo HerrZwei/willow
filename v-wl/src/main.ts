@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import install from '@/utils/install';
 import components from '@/components/antd/config'
+import 'ant-design-vue/dist/antd.css'
 // import '@/components/antd/index'
 import '@/public-path'
 
