@@ -1,11 +1,11 @@
 const sum = (arr: Array<number>): number => {
   const { length } = arr;
-  let number;
+  let number: number;
   if (length === 0)  {
     number = 0;
     return number;
   }
-  number = arr.shift();
+  number = arr.shift()!;
   return number + sum(arr);
 }
 
@@ -22,7 +22,7 @@ console.log(sum1([1, 3, 5]));
 
 
 const sum2 = (arr: Array<number>): number => {
-  return 
+  return eval(arr.join('+'))
 }
 
 export default sum;
