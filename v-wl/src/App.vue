@@ -1,12 +1,20 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/test">Test</router-link>|
-    <router-link to="/layout">Layout</router-link>
+    <Layout />
     <router-view />
   </div>
 </template>
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import Layout from "@/components/layout/index.vue";
+@Options({
+  components: {
+    Layout,
+  },
+})
+export default class v extends Vue {}
+</script>
+
 
 <style lang="less">
 #app {

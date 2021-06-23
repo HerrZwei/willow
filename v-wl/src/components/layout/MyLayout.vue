@@ -75,6 +75,7 @@
             }"
           >
             Content
+            <slot></slot>
           </a-layout-content>
         </a-layout>
       </a-layout>
