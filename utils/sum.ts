@@ -24,3 +24,9 @@ console.log(sum1([1, 3, 5]));
 const sum2 = (arr: Array<number>): number => {
   return 
 }
+
+export default sum;
+export {
+  sum1,
+  sum2
+}
